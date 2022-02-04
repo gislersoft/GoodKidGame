@@ -11,6 +11,8 @@ public class CharacterControllerScript : MonoBehaviour
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
 
+    public Animator animatorRef;
+
     private void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
@@ -30,6 +32,9 @@ public class CharacterControllerScript : MonoBehaviour
         if (move != Vector3.zero)
         {
             gameObject.transform.forward = move;
+            animatorRef.SetBool("Caminando", true);
+        } else {
+            animatorRef.SetBool("Caminando", false);
         }
 
         // Changes the height position of the player..

@@ -21,7 +21,7 @@ public class SmoothChaseCameraScript : MonoBehaviour
     private void LateUpdate()
     {
         Vector3 targetPosition = Target.position + Offset;
-        float distanceFix = 0;
+        // float distanceFix = 0;
         Transform cameraTransform = Camera.main.transform;
         Vector3 rayDirection = cameraTransform.position - Target.position;
         /*
