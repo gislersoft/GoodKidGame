@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde4a1f14871240c198f426600e3c0e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.03
+  speed: 2
 --- !u!1 &8621777352451854970
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,9 +88,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.0509078, g: 0.96272457, b: 0.9811321, a: 1}
+  m_Color: {r: 0.98039216, g: 0.050980378, b: 0.744835, a: 1}
   m_Intensity: 1
-  m_Range: 4
+  m_Range: 7
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
