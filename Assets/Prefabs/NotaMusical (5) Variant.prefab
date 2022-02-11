@@ -19,13 +19,17 @@ PrefabInstance:
       propertyPath: sonidoNota
       value: 
       objectReference: {fileID: 8300000, guid: d7c2f7d7b186f4135b631138743ec529, type: 3}
+    - target: {fileID: 4307212831775689499, guid: 67949a4f0431747dc845661a6f429607, type: 3}
+      propertyPath: valor
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 6690519574034303056, guid: 67949a4f0431747dc845661a6f429607, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: d7c2f7d7b186f4135b631138743ec529, type: 3}
     - target: {fileID: 8621777352162781748, guid: 67949a4f0431747dc845661a6f429607, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.09
+      value: -10.56
       objectReference: {fileID: 0}
     - target: {fileID: 8621777352162781748, guid: 67949a4f0431747dc845661a6f429607, type: 3}
       propertyPath: m_LocalPosition.y
@@ -33,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8621777352162781748, guid: 67949a4f0431747dc845661a6f429607, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 4.37
       objectReference: {fileID: 0}
     - target: {fileID: 8621777352162781748, guid: 67949a4f0431747dc845661a6f429607, type: 3}
       propertyPath: m_LocalRotation.x
@@ -69,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8621777352162781750, guid: 67949a4f0431747dc845661a6f429607, type: 3}
       propertyPath: m_Name
-      value: NotaMusical (5)
+      value: NotaMusical (11)
       objectReference: {fileID: 0}
     - target: {fileID: 8621777352451854968, guid: 67949a4f0431747dc845661a6f429607, type: 3}
       propertyPath: m_Color.g
