@@ -20,7 +20,7 @@ public class Pies : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        movimiento.puedoSaltar = true;
+       // movimiento.puedoSaltar = true;
 
 
     }

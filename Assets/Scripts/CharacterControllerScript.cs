@@ -4,120 +4,75 @@ using UnityEngine;
 
 public class CharacterControllerScript : MonoBehaviour
 {
+
+    float sensibilidad = 500f;
+    public Transform playerB;
+    float xRot = 0;
+
+
+
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
-    private float playerSpeed = 2.0f;
+    private float playerSpeed = 4.0f;
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
 
-    
-    public bool puedoSaltar;
-
-    float verX, verY;
-    private float velocidad = 6f;
-
     public Animator animatorRef;
-
-
-    public Rigidbody rb;
-    private float fuerzaExtra = 1;
 
     private void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
-        puedoSaltar = false;
-
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        groundedPlayer = controller.isGrounded;
+        if (groundedPlayer && playerVelocity.y < 0)
         {
-            //animacion.SetBool("Salto", true);
-
-            rb.AddForce(new Vector3(0, 7, 0), ForceMode.Impulse);
-            //  Debug.Log("Salta");
-
+            playerVelocity.y = 0f;
         }
 
 
-        //groundedPlayer = controller.isGrounded;
-        //if (groundedPlayer && playerVelocity.y < 0)
-        //{
-        //    playerVelocity.y = 0f;
-        //}
+        float mouseX = Input.GetAxis("Mouse X") * sensibilidad * Time.deltaTime;
 
-        //Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        //controller.Move(move * Time.deltaTime * playerSpeed);
+        float moveFront = Input.GetAxis("Vertical");
+        // float moveSide = Input.GetAxis("Horizontal");
 
-        //if (move != Vector3.zero)
-        //{
-        //    gameObject.transform.forward = move;
-        //    animatorRef.SetBool("Caminando", true);
-        //} else {
-        //    animatorRef.SetBool("Caminando", false);
-        //}
-
-        //// Changes the height position of the player..
-        //if (Input.GetButtonDown("Jump") && groundedPlayer)
-        //{
-        //    playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-        //}
-
-        //playerVelocity.y += gravityValue * Time.deltaTime;
-        //controller.Move(playerVelocity * Time.deltaTime);
-    }
+        transform.Rotate(Vector3.up * mouseX);
 
 
+        Vector3 move = transform.forward.normalized * moveFront;
+        // move = move + (transform.right * moveSide);
+       
+        controller.Move(move * Time.deltaTime * playerSpeed);
 
 
-    private void FixedUpdate() {
+        // + moveSide * transform.right
 
 
-
-        if (puedoSaltar)
+        if (move != Vector3.zero)
         {
-            
-
-            verX = Input.GetAxisRaw("Horizontal");
-            verY = Input.GetAxisRaw("Vertical");
-
-
-
-            Vector3 movimiento = new Vector3(verX, 0, verY);
-            movimiento.Normalize();
-
-            transform.position += (transform.forward * movimiento.z * velocidad * Time.deltaTime);
-            transform.position += (transform.right * movimiento.x * velocidad * Time.deltaTime);
+            gameObject.transform.forward = move;
+            animatorRef.SetBool("Caminando", true);
         }
         else
         {
-            //EstoyCallendo();
+            animatorRef.SetBool("Caminando", false);
         }
 
-        
+        // Changes the height position of the player..
+        if (Input.GetButtonDown("Jump") && groundedPlayer)
+        {
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+        }
 
-
-
-
+        playerVelocity.y += gravityValue * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);
     }
-
-
-
-
-
-    //public void EstoyCallendo()
-    //{
-
-    //    rb.AddForce(fuerzaExtra * Physics.gravity);
-    //    //animacion.SetBool("TocoSuelo", false);
-    //    //animacion.SetBool("Salto", false);
-
-    //}
-
-
-
 }
+
+
+
+
+
