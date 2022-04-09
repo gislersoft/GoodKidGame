@@ -25,7 +25,7 @@ GoodKidGame es un prototipo de videojuego sobre un chico punketo que adora la m�
 
 # Responsabilidades del Trabajo en Equipo
 
-## Equipo de QA
+## Equipo de QA y Game Design
 
 Este equipo descarga los ultimos cambios de la rama qa:
 
@@ -34,12 +34,14 @@ Este equipo descarga los ultimos cambios de la rama qa:
 3. El QA se cambia a la rama qa: ```git checkout qa```
 4. El QA baja los ultimos cambios de la rama: ```git pull origin qa```
 
-### Tareas del QA
+### Tareas del QA y Game Design
 
 1. Reportar bugs o mejoras como un Issue dando la mejor descripción posible de cómo reproducir el problema, se apoya en imagenes.
 2. Informar al equipo correspondiente el bug, hacer tracking de los issues y tagear a los responsables de solucionar el problema.
 3. Crear el manual del Juego en formato PDF, este manual se distribuirá con el Juego.
 4. El manager QA debe verificar que todos los miembros del equipo tengan tareas asignadas en caso de no tener funcionalidades para probar debe tomar el tiempo que un QA se queda sin trabajo.
+5. Diseñar el Juego pasarle al equipo de Modelado los diseños preliminares del juego.
+6. Dirigir el diseño del juego y verificar que las restricicones se cumplan.
 
 ## Equipo de Scripting 
 
