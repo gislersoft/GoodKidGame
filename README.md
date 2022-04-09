@@ -6,6 +6,7 @@ GoodKidGame es un prototipo de videojuego sobre un chico punketo que adora la m�
 - Debe ser un platformer en 3D.
 - Los items que el jugador toma son notas musicales que cada una tiene un valor, sonido y color diferente.
 - El personaje principal debe ser el niño de gorra.
+- No se pueden usar modelos que tengan derechos de autor, solo son validos elementos con licencia CONFIRMADA Creative Commons No attribution.
 
 # Para Resolver conflictos
 
@@ -55,5 +56,42 @@ Este equipo se encarga de crear y programar las mecánicas del juego:
 2. Integrarse con el equipo de UI para reflejar los estados en el HUD del juego (vidas, score, etc).
 3. Integrarse con el equipo de Modelado para programar mecanicas u otros aspectos del juego.
 4. Subir los cambios a la rama develop.
+
+## Equipo de Audio
+
+Los ingenieros del equipo de audio no solo buscan los audio o los crean también son los encargados de programar el audio.
+
+1. Proveer de audio y música al juego (solo pueden usar creative commons no attribution license)
+2. Deben agregar el audio a las escenas y a los scripts (para esto deben ponerse con el equipo de scripting)
+
+## Equipo de Modelado y Level Design
+
+Son los encargado y los unicos que pueden tocar la escena Level1.scene
+
+1. Crear los modelos 3D del juego y enviarselos a los de Texturizado
+2. Hacer el Level design
+3. Animar los modelos 3D que ya esten texturizados.
+
+
+## Equipo de UI
+
+1. Crear el menu principal y el HUD del juego
+2. Crean las imagenes de UI
+3. Estan en capacidad de programar e integrarse con Scripting para los estados del juego (Vidas, Score, etc)
+
+## Equipo de Texturizado
+
+1. Se encargan de hacer el UV
+2. Se encargan de texturizar los modelos y enviar los modelos texturizados para que el equipo de modelado inicie la animacion si se requiere
+3. Este equipo esta en constante comunicacion con el de Modelado y UI estos dos managers deben hablarse bastante.
+
+# Equipo de TI
+
+Soluciona los problemas tecnicos
+
+
+
+
+
 
 
