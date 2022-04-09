@@ -11,19 +11,39 @@ public class CharacterControllerScript : MonoBehaviour
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
 
+    
+    public bool puedoSaltar;
 
     float verX, verY;
     private float velocidad = 6f;
 
     public Animator animatorRef;
 
+
+    public Rigidbody rb;
+    private float fuerzaExtra = 1;
+
     private void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
+        puedoSaltar = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //animacion.SetBool("Salto", true);
+
+            rb.AddForce(new Vector3(0, 7, 0), ForceMode.Impulse);
+            //  Debug.Log("Salta");
+
+        }
+
+
         //groundedPlayer = controller.isGrounded;
         //if (groundedPlayer && playerVelocity.y < 0)
         //{
@@ -56,25 +76,48 @@ public class CharacterControllerScript : MonoBehaviour
 
     private void FixedUpdate() {
 
-        verX = Input.GetAxisRaw("Horizontal");
-        verY = Input.GetAxisRaw("Vertical");
+
+
+        if (puedoSaltar)
+        {
+            
+
+            verX = Input.GetAxisRaw("Horizontal");
+            verY = Input.GetAxisRaw("Vertical");
 
 
 
-        Vector3 movimiento = new Vector3(verX, 0, verY);
-        movimiento.Normalize();
+            Vector3 movimiento = new Vector3(verX, 0, verY);
+            movimiento.Normalize();
 
-        transform.position += (transform.forward * movimiento.z * velocidad * Time.deltaTime);
-        transform.position += (transform.right * movimiento.x * velocidad * Time.deltaTime);
+            transform.position += (transform.forward * movimiento.z * velocidad * Time.deltaTime);
+            transform.position += (transform.right * movimiento.x * velocidad * Time.deltaTime);
+        }
+        else
+        {
+            //EstoyCallendo();
+        }
+
+        
 
 
 
 
     }
-    
 
 
-    
+
+
+
+    //public void EstoyCallendo()
+    //{
+
+    //    rb.AddForce(fuerzaExtra * Physics.gravity);
+    //    //animacion.SetBool("TocoSuelo", false);
+    //    //animacion.SetBool("Salto", false);
+
+    //}
+
 
 
 }
