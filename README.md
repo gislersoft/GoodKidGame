@@ -85,9 +85,9 @@ Son los encargado y los unicos que pueden tocar la escena Level1.scene
 2. Se encargan de texturizar los modelos y enviar los modelos texturizados para que el equipo de modelado inicie la animacion si se requiere
 3. Este equipo esta en constante comunicacion con el de Modelado y UI estos dos managers deben hablarse bastante.
 
-# Equipo de TI
+# Equipo de Soporte
 
-Soluciona los problemas tecnicos
+Soluciona los problemas tecnicos.
 
 
 
